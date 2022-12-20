@@ -1,0 +1,14 @@
+pipeline {
+  agent {label "docker-agent"}
+  stages{
+    stage("Tool versioning"){
+      steps{
+        sh '''
+          docker --version
+          docker-compose version
+          '''
+      }
+    }
+  }
+}
+  
